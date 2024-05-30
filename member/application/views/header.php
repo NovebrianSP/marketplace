@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <div class="container">
-            <a href="" class="navbar-brand">MEMBER</a>
+            <a href="" class="navbar-brand">ADMIN</a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,6 +41,7 @@
                             <li><a class="dropdown-item" href="<?php echo base_url('seller/transaksi') ?>">Penjualan Saya</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="<?php echo base_url("akun") ?>" class="nav-link">
                             <?php echo $this->session->userdata("nama_member") ?>

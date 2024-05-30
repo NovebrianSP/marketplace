@@ -12,7 +12,7 @@
 
 		function simpan($inputan)
 		{
-			$config['upload_path'] = './asset/upload/';
+			$config['upload_path'] = $this->config->item("assets_kategori");
 			$config['allowed_types'] = 'gif|jpg|png';
 
 			$this->load->library('upload', $config);
@@ -44,7 +44,7 @@
 
 		function edit($inputan, $id_kategori)
 		{
-			$config['upload_path'] = './asset/upload';
+			$config['upload_path'] = $this->config->item("assets_kategori");
 			$config['allowed_types'] = 'gif|jpg|png';
 			$this->load->library('upload', $config);
 

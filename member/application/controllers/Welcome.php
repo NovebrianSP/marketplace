@@ -1,19 +1,19 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller
-{
+class Welcome extends CI_Controller {
 
 	public function index()
 	{
 		$inputan = $this->input->post();
 
 		$this->form_validation->set_rules('email_member', 'Email', 'required');
-		$this->form_validation->set_rules('password_member', 'Password', 'required');
+		$this->form_validation->set_rules('password_member', 'Password Member', 'required');
 
 		$this->form_validation->set_message('required', '%s wajib diisi');
 
-		if ($this->form_validation->run() == TRUE) {
+		if ($this->form_validation->run()==TRUE)
+		{
 			$this->load->model('Mmember');
 			$output = $this->Mmember->login($inputan);
 
@@ -28,3 +28,4 @@ class Welcome extends CI_Controller
 		$this->load->view('login');
 	}
 }
+?>

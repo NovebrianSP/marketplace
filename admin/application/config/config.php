@@ -24,6 +24,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/marketplace2349/admin/';
+$config['assets_kategori'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2349/assets/kategori/";
+$config['url_kategori'] = 'http://localhost/marketplace2349/assets/kategori/';
+
+$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2349/assets/produk/";
+$config['url_produk'] = 'http://localhost/marketplace2349/assets/produk/';
 
 /*
 |--------------------------------------------------------------------------

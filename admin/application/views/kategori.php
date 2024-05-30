@@ -25,7 +25,7 @@
                     <tr>
                         <td><?php echo $k + 1 ?></td>
                         <td><?php echo $data['nama_kategori'] ?></td>
-                        <td><img src="<?php echo base_url("./asset/upload/".$data['foto_kategori']) ?>" alt="foto kategori" width="200"></td>
+                        <td><img src="<?php echo $this->config->item("url_kategori").$data['foto_kategori'] ?>" alt="foto kategori" width="200"></td>
                         <td>
                             <a href="<?php echo site_url('kategori/edit/'.$data['id_kategori']) ?>" class="btn btn-warning">Edit</a>
                             <a href="<?php echo site_url('kategori/hapus/'.$data['id_kategori']) ?>" class="btn btn-danger">Remove</a>

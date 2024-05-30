@@ -21,7 +21,7 @@
 			</div>
             <div class="mb-3">
 				<label for="foto_kategori_lama" class="form-label">Foto Kategori Lama</label>
-				<img width="300" name="foto_kategori_lama" src="<?php echo base_url('./asset/upload/'.$kategori['foto_kategori']) ?>" alt="Foto Kategori Lama">
+				<img width="300" name="foto_kategori_lama" src="<?php echo $this->config->item("url_kategori").$kategori['foto_kategori'] ?>" alt="Foto Kategori Lama">
 			</div>
 			<div class="mb-3">
 				<label for="foto" class="form-label">Upload Foto Kategori Baru</label>

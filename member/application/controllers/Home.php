@@ -13,8 +13,11 @@
 
         public function index()
         {
+            $this->load->model('Mmember');
+            $data["jumlah_distrik"] = $this->Mmember->jumlah_member_distrik();
+
             $this->load->view('header');
-            $this->load->view('home');
+            $this->load->view('home', $data);
             $this->load->view('footer');
         }
     }

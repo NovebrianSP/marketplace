@@ -14,7 +14,7 @@
             <div class="col-md-4 mt-5 offset-md-4 bg-white shadow p-5">
                 <form method="post">
                     <div class="mb-3">
-                        <label for="email_member">Email</label>
+                        <label for="email_member">Email Anda</label>
                         <input type="text" name="email_member" class="form-control" value="<?php echo set_value('email_member') ?>">
                         <div class="text-danger">
                             <?php echo form_error('email_member') ?>

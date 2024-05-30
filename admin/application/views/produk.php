@@ -30,7 +30,7 @@
                     <td><?php echo $data['nama_member'] ?></td>
                     <td><?php echo $data['nama_produk'] ?></td>
                     <td><?php echo $data['harga_produk'] ?></td>
-                    <td><?php echo $data['foto_produk'] ?></td>
+                    <td><img width="150" src="<?php echo $this->config->item("url_produk").$data['foto_produk'] ?>" alt=""></td>
                     <td>
                         <a href="" class="btn btn-info">Detail</a>
                     </td>
