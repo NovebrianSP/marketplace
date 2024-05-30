@@ -30,6 +30,12 @@ $config['url_kategori'] = 'http://localhost/marketplace2349/assets/kategori/';
 $config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2349/assets/produk/";
 $config['url_produk'] = 'http://localhost/marketplace2349/assets/produk/';
 
+$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2349/assets/slider/";
+$config['url_slider'] = 'http://localhost/marketplace2349/assets/slider/';
+
+$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2349/assets/artikel/";
+$config['url_artikel'] = 'http://localhost/marketplace2349/assets/artikel/';
+
 /*
 |--------------------------------------------------------------------------
 | Index File

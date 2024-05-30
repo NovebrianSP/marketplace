@@ -78,4 +78,13 @@ class Mproduk extends CI_Model
         $this->db->where('id_produk', $id_produk);
         $this->db->delete('produk');
     }
+
+    function tampil_produk_terbaru()
+    {
+        $this->db->order_by('id_produk', 'desc');
+        $q = $this->db->get('produk',4,0);
+        $d = $q->result_array();
+
+        return $d;
+    }
 }

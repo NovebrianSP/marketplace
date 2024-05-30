@@ -21,6 +21,12 @@
                         <a href="<?php echo site_url('Home') ?>" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a href="<?php echo site_url('Slider') ?>" class="nav-link">Slider</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo site_url('Artikel') ?>" class="nav-link">Artikel</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="<?php echo site_url('Kategori') ?>" class="nav-link">Kategori</a>
                     </li>
                     <li class="nav-item">
