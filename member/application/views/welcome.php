@@ -27,7 +27,7 @@
                 <?php foreach ($kategori as $key => $v) : ?>
                     <div class="col-md-4 text-center">
                         <img src="<?php echo $this->config->item('url_kategori') . $v['foto_kategori'] ?>" class="w-50 rounded-circle">
-                        <h5><?php echo $v['nama_kategori'] ?></h5>
+                        <h6><?php echo $v['nama_kategori'] ?></h6>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -41,7 +41,7 @@
                 <?php foreach ($produk as $key => $v) : ?>
                     <div class="col-md-3">
                         <div class="card mb-3 border-0 shadow">
-                            <img src="<?php echo $this->config->item('url_produk').$v['foto_produk'] ?>" alt="">
+                            <img src="<?php echo $this->config->item('url_produk') . $v['foto_produk'] ?>" alt="">
                             <div class="card-body text-center">
                                 <h6><?php echo $v['nama_produk'] ?></h6>
                                 <span>Rp. <?php echo number_format($v['harga_produk']) ?></span>
@@ -53,10 +53,29 @@
         </div>
     </section>
 
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-4 mt-5 offset-md-4 bg-white shadow p-5">
-                <form method="post">
+    <section class="bg-white py-5">
+        <div class="container">
+            <h5 class="text-center mb-5">Artikel Terbaru</h5>
+            <div class="row">
+                <?php foreach ($artikel as $key => $v) : ?>
+                    <div class="col-md-4 text-center">
+                        <img src="<?php echo $this->config->item('url_artikel') . $v['foto_artikel'] ?>" class="w-100">
+                        <h5 class="mt-3"><?php echo $v['judul_artikel'] ?></h5>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
                     <div class="mb-3">
                         <label for="email_member">Email Anda</label>
                         <input type="text" name="email_member" class="form-control" value="<?php echo set_value('email_member') ?>">
@@ -73,6 +92,7 @@
                     </div>
                     <button class="btn btn-primary">Login</button>
                 </form>
+                </div>
             </div>
         </div>
     </div>

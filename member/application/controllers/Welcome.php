@@ -29,9 +29,11 @@ class Welcome extends CI_Controller {
 		$this->load->model('Mslider');
 		$this->load->model('Mkategori');
 		$this->load->model('Mproduk');
+		$this->load->model('Martikel');
 		$data['slider'] = $this->Mslider->tampil();
 		$data['kategori'] = $this->Mkategori->tampil();
 		$data['produk'] = $this->Mproduk->tampil_produk_terbaru();
+		$data['artikel'] = $this->Martikel->tampil_artikel_terbaru();
 
 		$this->load->view('header');
 		$this->load->view('welcome', $data);
