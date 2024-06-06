@@ -7,6 +7,7 @@
         <th>No</th>
         <th>Produk</th>
         <th>Harga</th>
+        <th>Berat</th>
         <th>Foto</th>
         <th>Opsi</th>
       </tr>
@@ -18,6 +19,7 @@
           <td><?php echo $key+1 ?></td>
           <td><?php echo $v['nama_produk'] ?></td>
           <td>Rp <?php echo number_format($v['harga_produk']) ?></td>
+          <td><?php echo $v['berat_produk'] ?></td>
           <td>
             <img width="250" src="<?php echo $this->config->item("url_produk").$v['foto_produk'] ?>" alt="foto_produk">
           </td>

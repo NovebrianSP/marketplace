@@ -77,4 +77,9 @@ class Mmember extends CI_Model
         $this->session->set_userdata('kode_distrik_member', $cekmember['kode_distrik_member']);
         $this->session->set_userdata('nama_distrik_member', $cekmember['nama_distrik_member']);
     }
+
+    function register($m)
+    {
+        $this->db->insert('member', $m);
+    }
 }

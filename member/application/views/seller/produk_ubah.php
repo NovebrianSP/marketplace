@@ -22,7 +22,12 @@
     </div>
     <div class="mb-3">
       <label for="harga_produk">Harga</label>
-      <input type="text" name="harga_produk" value="<?php echo $produk['harga_produk'] ?>" class="form-control">
+      <input type="number" name="harga_produk" value="<?php echo $produk['harga_produk'] ?>" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="berat_produk">Berat</label>
+      <input type="number" name="berat_produk" value="<?php echo $produk['berat_produk'] ?>" class="form-control">
+      <span class="text-muted small">Gram</span>
     </div>
     <div class="mb-3">
       <label for="foto_produk">Foto Lama</label><br>

@@ -5,7 +5,7 @@
     <h5 class="text-center mt-4">Ubah Akun member</h5>
     <div class="container mt-2">
         <div class="row">
-            <div class="col-md-4 mt-5 offset-md-4">
+            <div class="col-md-8 mt-5 offset-md-2">
                 <form method="post">
                     <div class="mb-3">
                         <label for="email_member">Email anda</label>
@@ -41,18 +41,18 @@
                         </span>
                     </div>
                     <div class="mb-3">
-                        <label for="nama_distrik_member">Nama Kota/Kabupaten</label>
-                        <input type="text" name="nama_distrik_member" class="form-control" value="<?php echo set_value('nama_distrik_member', $this->session->userdata('nama_distrik_member')) ?>">
-                        <span class="text-danger small">
-                            <?php echo form_error('nama_distrik_member') ?>
-                        </span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="kode_distrik_member">Kode Kota/Kabupaten</label>
-                        <input type="text" name="kode_distrik_member" class="form-control" value="<?php echo set_value('kode_distrik_member', $this->session->userdata('kode_distrik_member')) ?>">
-                        <span class="text-danger small">
-                            <?php echo form_error('kode_distrik_member') ?>
-                        </span>
+                        <label for="">Kota/Kabupaten</label>
+                        <select name="kode_distrik_member" class="form-control form-select">
+                            <option value="">Pilih</option>
+                            <?php foreach ($distrik as $key => $v) : ?>
+                                <option value="<?php echo $v['city_id'] ?>" <?php echo $v["city_id"] == set_value("city_id", $this->session->userdata('kode_distrik_member')) ? "selected" : "" ?>>
+                                    <?php echo $v['type'] ?>
+                                    <?php echo $v['city_name'] . "," ?>
+                                    <?php echo $v['province'] ?>
+                                </option>
+                            <?php endforeach ?>
+                        </select>
+                        <span class="text-muted"><?php echo form_error("city_id") ?></span>
                     </div>
                     <button class="btn btn-primary">Ubah Data Akun</button>
                 </form>
