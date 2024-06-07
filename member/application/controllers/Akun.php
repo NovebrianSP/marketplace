@@ -21,7 +21,6 @@ class Akun extends CI_Controller
         $this->form_validation->set_rules('alamat_member', 'Alamat', 'required');
         $this->form_validation->set_rules('wa_member', 'No Handphone', 'required');
         $this->form_validation->set_rules('kode_distrik_member', 'Kode Distrik', 'required');
-        $this->form_validation->set_rules('nama_distrik_member', 'Nama Distrik', 'required');
 
         $this->form_validation->set_message('required', '%s wajib diisi');
 
