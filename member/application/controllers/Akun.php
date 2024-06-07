@@ -36,7 +36,7 @@ class Akun extends CI_Controller
             $this->Mmember->ubah($inputan, $id_member);
 
             $this->session->set_flashdata('pesan_sukses', 'Data akun telah diubah');
-            redirect('home', 'refresh');
+            // redirect('home', 'refresh');
         }
 
         $this->load->view('header');
