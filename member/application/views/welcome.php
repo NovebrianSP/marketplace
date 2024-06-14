@@ -40,13 +40,15 @@
             <div class="row">
                 <?php foreach ($produk as $key => $v) : ?>
                     <div class="col-md-3">
-                        <div class="card mb-3 border-0 shadow">
-                            <img src="<?php echo $this->config->item('url_produk') . $v['foto_produk'] ?>" alt="">
-                            <div class="card-body text-center">
-                                <h6><?php echo $v['nama_produk'] ?></h6>
-                                <span>Rp. <?php echo number_format($v['harga_produk']) ?></span>
+                        <a href="<?php echo base_url("produk/detail/".$v["id_produk"]) ?>" class="text-decoration-none">
+                            <div class="card mb-3 border-0 shadow">
+                                <img src="<?php echo $this->config->item('url_produk') . $v['foto_produk'] ?>" alt="">
+                                <div class="card-body text-center">
+                                    <h6><?php echo $v['nama_produk'] ?></h6>
+                                    <span>Rp. <?php echo number_format($v['harga_produk']) ?></span>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
