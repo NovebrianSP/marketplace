@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2024 at 06:50 PM
+-- Generation Time: Jun 14, 2024 at 05:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -89,6 +89,29 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `foto_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `keranjang`
+--
+
+CREATE TABLE `keranjang` (
+  `id_keranjang` int(11) NOT NULL,
+  `id_member_jual` int(11) NOT NULL,
+  `id_member_beli` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `keranjang`
+--
+
+INSERT INTO `keranjang` (`id_keranjang`, `id_member_jual`, `id_member_beli`, `id_produk`, `jumlah`) VALUES
+(1, 2, 3, 1, 1),
+(2, 2, 3, 2, 2),
+(5, 1, 3, 5, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 
@@ -110,8 +133,8 @@ CREATE TABLE `member` (
 INSERT INTO `member` (`id_member`, `email_member`, `password_member`, `nama_member`, `alamat_member`, `wa_member`, `kode_distrik_member`, `nama_distrik_member`) VALUES
 (1, 'arif@amikom.ac.id', 'bb6113797d13f9451665a7591e5943986f546dfa', 'Arif Nur Rohman', 'Purwomartani Kalasan Sleman ', '08990423789', '512', 'Sleman'),
 (2, 'lanesra@amikom.ac.id', 'a5375c7f48244c8f4876ee6f97bbda4d91fe1665', 'Lanesra', 'Arjawinangun Cirebon', '081336952939', '419', 'Cirebon'),
-(3, 'novebrian@gmail.com', '1fdce60e456ccfcc3a19f9b87d594b02323e234a', 'Novebrian', 'Jetis, Klaten Selatan, Klaten', '089694929896', '574', 'Klaten'),
-(4, 'novebrian211@gmail.com', '7f52fd19014b02f6cd1e7b1626606c7fba15956e', 'Brian', 'dummy', '09872124141245', '196', 'Kabupaten Klaten Jawa Tengah');
+(3, 'novebrian@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Novebrian', 'Jetis, Klaten Selatan, Klaten', '089694929896', '574', 'Klaten'),
+(4, 'novebrian211@gmail.com', '7f52fd19014b02f6cd1e7b1626606c7fba15956e', 'Brian', 'dummy', '09872124141245', '193', 'Kabupaten Kepulauan Yapen (Yapen Waropen) Papua');
 
 -- --------------------------------------------------------
 
@@ -137,7 +160,8 @@ CREATE TABLE `produk` (
 INSERT INTO `produk` (`id_produk`, `id_member`, `id_kategori`, `nama_produk`, `harga_produk`, `foto_produk`, `deskripsi_produk`, `berat_produk`) VALUES
 (1, 2, 1, 'Hijab Segi Empat', 90000, 'download_(1).jpg', 'Pashmina dagu TUTUP LEHER (CEK GAMBAR PRODUK)\r\nProduct by SYAMSIAR HIJAB\r\n\r\nJika menginginkan ukuran yg lebih panjang, silahkan cari di katalog produk kami,\r\n\r\nSPESIFIKASI\r\n• Menggunakan full bahan spandek jersey (khusus HIjab) \r\n• ukuran 180 x 60 akan ada pengurangan  ukuran karena dijahit. (FOTO REAL PICTURE)\r\n\r\nBahan: Jersey syamsiar premium\r\n1. Memiliki Berbagai Macam Varian Warna (50 Varian warna yang akan di tambah)\r\n2. Mampu Menyerap Keringat dengan Baik (Tidak Panas)\r\n3. Bahannya Cepat Kering\r\n4. Sifat Kainnya Tidak Mudah Kusut\r\n5. Bahannya Awet\r\n6. Bahannya Melar, Fleksibel, dan Jatuh\r\n7. Memiliki Harga Terjangkau\r\n\r\n??????? ?????:\r\nPemilihan warna cek di variasi panduan warna,\r\nNama warna setiap seller beda2 jadi acuannya di sesuaikan dengan variasi warna yang kami miliki..\r\n\r\nPanduan warna kami sudah di sesuaikan dengan warna hijab yang kami jual, kami sadar di setiap smartphone custemer pasti berbeda2 karena kontraks cahaya, pengaturan HD layar atau Pengaktifan perisai mata akan mempengaruhi warna di smartphone kk, jadi panduan kami buat hanya sebagai gambaran kk...\r\n\r\nWarna produk di masing2 variasi cek ya kak, insya Allah tingkat keakuratan 99.99%\r\n\r\nkenapa harus memilih SYAMSIAR HIJAB ? karena SYAMSIAR HIJAB lebih peduli terhadap kepuasan,kebanggaan & kenyamanan saat menggunakan produk kami.\r\n\r\nkami berharap custumer SYAMSIAR\r\n● puas karena kualitas produk.\r\n● nyaman karna produk SYAMSIAR produk tidak mudah koyak, memberikan kesan simple & elegant , bahan yang digunakan pada produk sudah bahan premium.\r\n● SYAMSIAR memiliki material exclusive sehingga tidak sama dengan produk yang ada dipasaran & memiliki nilai tambahan akan itu\r\n● SYAMSIAR menawarkan nilai produk yang berkualitas tinggi dengan harga yang terjangkau banyak khalayak\r\n\r\nNOTE: JANGAN KONFIRMASI PESANAN DI TERIMA, CHAT DAHULU BILA ADA KESALAHAN / KETIDAK SESUAIAN / APAPUN ITU SILAHKAN HUBUNGI KAMI VIA CHAT TERLEBIH DAHULU YA SISTER KARNA KAMI AKAN BERTANGGUNG JAWAB 100% (SERTAKAN VIDIO UNBOXING)', 200),
 (2, 2, 1, 'Mukena Dewasa ', 200000, 'download.jpg', 'Mukena Dewasa 2 in 1 Sutra Velvet Premium Lembut Dan Mewah Terbaru\r\nModelnya Yang Terlihat Simple Dan Mewah Ini memiliki 2 look yang Sangat Elegan Cocok Untuk Dibawa Traveling. Motif Renda  Renda ZIPPER Import Gracella (RENDA KIRIM RANDOM)\r\nㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ\r\nㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ \r\nDETAIL BAHAN DAN KUALITAS PRODUK\r\n• warna terlihat mewah mengkilap\r\n• Bahan Sutra Velvet Silk : Tebal, Lembut, Jatuh, Tidak Mudah Kusut\r\n• Jahitan Terjamin Rapih\r\n• Renda bagian atas sekeliling mukena berukuran 6cm menggunakan Renda jiper \r\n\r\nDETAIL PRODUK\r\n• Satu set mukena : Atasan , Bawahan + Tas\r\n• Wajah Tanpa Karet sehingga terlihat elegan\r\n• Ikat kepala memakai tali sehingga bisa di sesuai kan\r\n• untuk atasan dengan pinggiran Renda ZIPPER Import Gracella (RENDA KIRIM RANDOM)\r\n• Untuk Rok Polos\r\n\r\nDETAIL UKURAN\r\n• size jumbo\r\n• panjang atasan depan 125 cm\r\n• panjang atasan belakang 135 cm\r\n• panjang Rok 120 cm\r\n• lebar bawahan 75 cm\r\n• Ukuran Tas Panjang 20 cm Lebar 25cm\r\n\r\nKemiripan warna 90% ya, karena tiap layar HP/PC mempunyai karakteristik yang berbeda. Selain itu, efek pencahayaan saat photoshoot bisa saja mempengaruhi tampilan warna pada hasil foto\r\n\r\nPENGIRIMAN\r\nTransfer sebelum pukul 17.00 barang dikirim dihari yang sama paling telat 1-2 hari selatah pemasan \r\nHARI MINGGU PENGIRIMAN Tetap ada', 200),
-(3, 2, 4, 'meng', 500000, 'apa-dek.jpg', 'meong meong meong', 1000);
+(3, 2, 4, 'meng', 500000, 'apa-dek.jpg', 'meong meong meong', 1000),
+(5, 1, 5, 'Casio General AE-1000W-1AVDF Sporty Digital Dial Black Resin Band', 450000, 'images.jpg', 'Casio General AE-1000W-1AVDF\r\n\r\nSEJARAH SINGKAT CASIO\r\n\r\nCasio didirikan sejak April 1946 oleh Tadao Kashio, seorang insinyur teknologi fabrikasi. Perusahaan ini berfokus pada pembuatan alat-alat teknologi seperti kalkulator, kemudian pada 1974, Casio melebarkan sayapnya ke industri jam tangan dengan melahirkan jam tangan digital Casiotron QW02. Casio sukses melahirkan jam tangan quartz, digital, dan analog. Hingga saat ini Casio menghasilkan produk jam tangan yang terjangkau dan juga berkualitas.\r\n\r\nTERLARIS DI JAMTANGAN.COM\r\nCasio General AE-1000W-1AVDF merupakan salah satu seri jam tangan yang sering diburu berkat kualitas dan harganya yang terjangkau. Seri ini termasuk terlaris di Jamtangan.com, terjual ribuan unit dan masih menjadi favorit.\r\n\r\nJam tangan digital ini berdesain sporty dan mempunyai tampilan terinspirasi kokpit pesawat. Case memiliki diameter 45 mm dengan ketebalan 13,8 mm yang membuat pergelangan semakin gahar dan garang. \r\n\r\nCasio General AE-1000W-1AVDF  didominasi dengan warna hitam dan abu-abu yang memberikan kesan maskulin. Cocok dibawa berpetualang. \r\n\r\nMASA BATERAI HINGGA 10 TAHUN\r\nSebagai petualang atau traveler, tentu kamu menginginkan jam tangan yang memiliki durabilitas serta kenyamanan yang maksimal. \r\n\r\nCasio AE-1000W-1AVDF mampu menjawab semua persoalan itu. Jam tangan digital ini memiliki masa baterai hingga 10 tahun. Dilengkapi dengan material resin mulai dari case hingga strap yang menunjang kegiatanmu di luar ruangan. Tak ada alasan lagi untuk tidak memulai petualangan bersama Casio AE-1000W-1AVDF.\r\n\r\nHARGA BERSAHABAT, FITUR BEJIBUN\r\nKamu juga bisa memantau berbagai zona waktu di dunia berkat world timer yang bisa mengakses 31 zona waktu. Jam tangan ini juga dilengkapi dengan grafik peta dunia pada dial yang menunjukan posisi zona waktu kita. \r\n\r\nDengan harga yang terjangkau kamu bisa mendapatkan banyak fitur bermanfaat mulai seperti alarm, full auto-calendar hingga 2099, timer, world timer, dan LED untuk visibilitas di keadaan minim cahaya. \r\n\r\nTak perlu khawatir saat menjelajah di keadaan hujan, karena jam tangan ini sudah memiliki ketahanan air hingga 10 bar. Dengan harga yang sangat terjangkau, kamu sudah bisa mendapatkan segudang fitur bermanfaat.', 50);
 
 -- --------------------------------------------------------
 
@@ -241,6 +265,12 @@ ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
+-- Indexes for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  ADD PRIMARY KEY (`id_keranjang`);
+
+--
 -- Indexes for table `member`
 --
 ALTER TABLE `member`
@@ -293,6 +323,12 @@ ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
@@ -302,7 +338,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `slider`

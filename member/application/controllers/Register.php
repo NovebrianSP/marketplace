@@ -31,6 +31,7 @@ class Register extends CI_Controller
 
       $this->Mmember->register($m);
       $this->session->set_flashdata('pesan_sukses', 'Registrasi berhasil, silahkan login');
+      redirect('/', 'refresh');
     }
 
     $this->load->view('header');

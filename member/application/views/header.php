@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <div class="container">
-            <a href="" class="navbar-brand">ADMIN</a>
+            <a href="" class="navbar-brand">MEMBER</a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,6 +25,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo site_url('Produk') ?>" class="nav-link">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo site_url('Keranjang') ?>" class="nav-link">Keranjang</a>
                     </li>
                 </ul>
                 <?php if ($this->session->userdata("id_member")) : ?>

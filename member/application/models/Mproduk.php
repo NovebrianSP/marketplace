@@ -26,7 +26,7 @@ class Mproduk extends CI_Model
     function simpan($inputan)
     {
         $config['upload_path'] = $this->config->item("assets_produk");
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|webp';
 
         $this->load->library('upload', $config);
 
@@ -55,7 +55,7 @@ class Mproduk extends CI_Model
     function ubah($inputan, $id_produk)
     {
         $config['upload_path'] = $this->config->item("assets_produk");
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|webp';
 
         $this->load->library('upload', $config);
 
@@ -84,6 +84,16 @@ class Mproduk extends CI_Model
         $this->db->order_by('id_produk', 'desc');
         $q = $this->db->get('produk',4,0);
         $d = $q->result_array();
+
+        return $d;
+    }
+
+    function detail_umum($id_produk)
+    {
+        $this->db->where('id_produk', $id_produk);
+        $this->db->join('kategori', 'produk.id_kategori = kategori.id_kategori', 'left');
+        $q = $this->db->get('produk');
+        $d = $q->row_array();
 
         return $d;
     }
