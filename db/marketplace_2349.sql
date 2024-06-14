@@ -3,7 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jun 14, 2024 at 05:07 AM
+=======
+<<<<<<< HEAD
+-- Generation Time: May 31, 2024 at 08:08 AM
+=======
+-- Generation Time: Jun 06, 2024 at 06:50 PM
+>>>>>>> 18224e714a499ea5126eb9f62c55b247ddb6f0ae
+>>>>>>> 7b2b97af1c02f025983842943bb41ff040888260
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -162,6 +170,26 @@ INSERT INTO `produk` (`id_produk`, `id_member`, `id_kategori`, `nama_produk`, `h
 (2, 2, 1, 'Mukena Dewasa ', 200000, 'download.jpg', 'Mukena Dewasa 2 in 1 Sutra Velvet Premium Lembut Dan Mewah Terbaru\r\nModelnya Yang Terlihat Simple Dan Mewah Ini memiliki 2 look yang Sangat Elegan Cocok Untuk Dibawa Traveling. Motif Renda  Renda ZIPPER Import Gracella (RENDA KIRIM RANDOM)\r\nㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ\r\nㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ \r\nDETAIL BAHAN DAN KUALITAS PRODUK\r\n• warna terlihat mewah mengkilap\r\n• Bahan Sutra Velvet Silk : Tebal, Lembut, Jatuh, Tidak Mudah Kusut\r\n• Jahitan Terjamin Rapih\r\n• Renda bagian atas sekeliling mukena berukuran 6cm menggunakan Renda jiper \r\n\r\nDETAIL PRODUK\r\n• Satu set mukena : Atasan , Bawahan + Tas\r\n• Wajah Tanpa Karet sehingga terlihat elegan\r\n• Ikat kepala memakai tali sehingga bisa di sesuai kan\r\n• untuk atasan dengan pinggiran Renda ZIPPER Import Gracella (RENDA KIRIM RANDOM)\r\n• Untuk Rok Polos\r\n\r\nDETAIL UKURAN\r\n• size jumbo\r\n• panjang atasan depan 125 cm\r\n• panjang atasan belakang 135 cm\r\n• panjang Rok 120 cm\r\n• lebar bawahan 75 cm\r\n• Ukuran Tas Panjang 20 cm Lebar 25cm\r\n\r\nKemiripan warna 90% ya, karena tiap layar HP/PC mempunyai karakteristik yang berbeda. Selain itu, efek pencahayaan saat photoshoot bisa saja mempengaruhi tampilan warna pada hasil foto\r\n\r\nPENGIRIMAN\r\nTransfer sebelum pukul 17.00 barang dikirim dihari yang sama paling telat 1-2 hari selatah pemasan \r\nHARI MINGGU PENGIRIMAN Tetap ada', 200),
 (3, 2, 4, 'meng', 500000, 'apa-dek.jpg', 'meong meong meong', 1000),
 (5, 1, 5, 'Casio General AE-1000W-1AVDF Sporty Digital Dial Black Resin Band', 450000, 'images.jpg', 'Casio General AE-1000W-1AVDF\r\n\r\nSEJARAH SINGKAT CASIO\r\n\r\nCasio didirikan sejak April 1946 oleh Tadao Kashio, seorang insinyur teknologi fabrikasi. Perusahaan ini berfokus pada pembuatan alat-alat teknologi seperti kalkulator, kemudian pada 1974, Casio melebarkan sayapnya ke industri jam tangan dengan melahirkan jam tangan digital Casiotron QW02. Casio sukses melahirkan jam tangan quartz, digital, dan analog. Hingga saat ini Casio menghasilkan produk jam tangan yang terjangkau dan juga berkualitas.\r\n\r\nTERLARIS DI JAMTANGAN.COM\r\nCasio General AE-1000W-1AVDF merupakan salah satu seri jam tangan yang sering diburu berkat kualitas dan harganya yang terjangkau. Seri ini termasuk terlaris di Jamtangan.com, terjual ribuan unit dan masih menjadi favorit.\r\n\r\nJam tangan digital ini berdesain sporty dan mempunyai tampilan terinspirasi kokpit pesawat. Case memiliki diameter 45 mm dengan ketebalan 13,8 mm yang membuat pergelangan semakin gahar dan garang. \r\n\r\nCasio General AE-1000W-1AVDF  didominasi dengan warna hitam dan abu-abu yang memberikan kesan maskulin. Cocok dibawa berpetualang. \r\n\r\nMASA BATERAI HINGGA 10 TAHUN\r\nSebagai petualang atau traveler, tentu kamu menginginkan jam tangan yang memiliki durabilitas serta kenyamanan yang maksimal. \r\n\r\nCasio AE-1000W-1AVDF mampu menjawab semua persoalan itu. Jam tangan digital ini memiliki masa baterai hingga 10 tahun. Dilengkapi dengan material resin mulai dari case hingga strap yang menunjang kegiatanmu di luar ruangan. Tak ada alasan lagi untuk tidak memulai petualangan bersama Casio AE-1000W-1AVDF.\r\n\r\nHARGA BERSAHABAT, FITUR BEJIBUN\r\nKamu juga bisa memantau berbagai zona waktu di dunia berkat world timer yang bisa mengakses 31 zona waktu. Jam tangan ini juga dilengkapi dengan grafik peta dunia pada dial yang menunjukan posisi zona waktu kita. \r\n\r\nDengan harga yang terjangkau kamu bisa mendapatkan banyak fitur bermanfaat mulai seperti alarm, full auto-calendar hingga 2099, timer, world timer, dan LED untuk visibilitas di keadaan minim cahaya. \r\n\r\nTak perlu khawatir saat menjelajah di keadaan hujan, karena jam tangan ini sudah memiliki ketahanan air hingga 10 bar. Dengan harga yang sangat terjangkau, kamu sudah bisa mendapatkan segudang fitur bermanfaat.', 50);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider`
+--
+
+CREATE TABLE `slider` (
+  `id_slider` int(11) NOT NULL,
+  `caption_slider` text NOT NULL,
+  `foto_slider` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id_slider`, `caption_slider`, `foto_slider`) VALUES
+(1, 'Oke', 'Top_10_Sparepart_Yang_Sering_Diganti.jpg'),
+(2, 'Oke 2', 'vadim-sherbakov-tciclj5ktbe-unsplash-55bff839df30b5ed08634ddf3e8b0dea_600x400.jpg');
 
 -- --------------------------------------------------------
 
