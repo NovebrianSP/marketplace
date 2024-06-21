@@ -59,4 +59,13 @@ class Mkeranjang extends CI_Model
     $this->db->delete('keranjang');
     
   }
+
+  function tampil_member_jual($id_member_jual) {
+    $this->db->where('id_member_jual', $id_member_jual);
+    $this->db->where('id_member_beli', $this->session->userdata('id_member'));
+    $this->db->join('produk', 'keranjang.id_produk = produk.id_produk', 'left');
+    $q = $this->db->get('keranjang');
+    $dk = $q->result_array();
+    return $dk;
+  }
 }
