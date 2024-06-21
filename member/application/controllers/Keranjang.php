@@ -42,6 +42,12 @@ class Keranjang extends CI_Controller
     
     $id_member_beli = $this->session->userdata('id_member');
     $data['member_beli'] = $this->Mmember->detail($id_member_beli);
+
+    $origin = $data['member_jual']['kode_distrik_member'];
+    $destination = $data['member_beli']['kode_distrik_member'];
+    $weight = 1000;
+    $this->load->model('Mongkir');
+    $data['biaya'] = $this->Mongkir->biaya($origin, $destination, $weight);
     
     $this->load->view('header');
     $this->load->view('checkout', $data);

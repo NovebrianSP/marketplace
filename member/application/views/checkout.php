@@ -51,8 +51,13 @@
       <form method="post">
         <select name="ongkir" id="" class="form-control mb-2">
           <option value="">Pilih</option>
-          <option value="">A</option>
-          <option value="">B</option>
+          <?php foreach($biaya['costs'] as $key => $v) : ?>
+            <option value="<?php echo $key ?>">
+              <?php echo $v['description'] ?>
+              <?php echo $v['cost'][0]['value'] ?>
+              <?php echo $v['cost'][0]['etd'] ?>
+            </option>
+          <?php endforeach ?>
         </select>
         <button class="btn btn-primary">Checkout</button>
       </form>
