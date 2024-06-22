@@ -49,7 +49,7 @@
     <div class="col-md-4">
       <h4>Pengiriman</h4>
       <form method="post">
-        <select name="ongkir" id="" class="form-control mb-2">
+        <select name="ongkir" id="" class="form-control mb-2" required>
           <option value="">Pilih</option>
           <?php foreach($biaya['costs'] as $key => $v) : ?>
             <option value="<?php echo $key ?>">
@@ -59,6 +59,7 @@
             </option>
           <?php endforeach ?>
         </select>
+        <div class="text-muted text-danger"><?php echo form_error("ongkir") ?></div>
         <button class="btn btn-primary">Checkout</button>
       </form>
     </div>
