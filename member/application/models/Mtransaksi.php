@@ -45,5 +45,11 @@
 
             return $d;
         }
+
+        function set_lunas($id_transaksi){
+            $this->db->where('id_transaksi', $id_transaksi);
+            $this->db->set('status_transaksi', 'lunas');
+            $this->db->update('transaksi');
+        }
     }
 ?>

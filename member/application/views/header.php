@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?php echo base_url('seller/produk') ?>">Produk Saya</a></li>
                                 <li><a class="dropdown-item" href="<?php echo base_url('seller/transaksi') ?>">Penjualan Saya</a></li>
-                                <li><a href="<?php echo site_url('Transaksi') ?>" class="dropdown-item">Transaksi Saya</a></li>
+                                <li><a href="<?php echo site_url('Transaksi') ?>" class="dropdown-item">Pembelian Saya</a></li>
                             </ul>
                         </li>
 
