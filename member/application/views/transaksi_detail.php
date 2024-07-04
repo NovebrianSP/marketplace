@@ -1,3 +1,45 @@
+<!-- Style CSS for satr rating start -->
+<style>
+    .stars a {
+        display: inline-block;
+        padding-right: 4px;
+        text-decoration: none;
+        margin: 0;
+    }
+
+    .stars a:after {
+        position: relative;
+        font-size: 18px;
+        font-family: 'FontAwesome', serif;
+        display: block;
+        content: "\f005";
+        color: #9e9e9e;
+    }
+
+    span {
+        font-size: 0;
+        /* trick to remove inline-element's margin */
+    }
+
+    .stars a:hover~a:after {
+        color: #9e9e9e !important;
+    }
+
+    span.active a.active~a:after {
+        color: #9e9e9e;
+    }
+
+    span:hover a:after {
+        color: blue !important;
+    }
+
+    span.active a:after,
+    .stars a.active:after {
+        color: blue;
+    }
+</style>
+<!-- CSS for star rating end -->
+
 <div class="container mt-3">
     <div class="row mb-5">
         <div class="col-md-3">
@@ -20,6 +62,7 @@
             <h5>Ekspedisi</h5>
             <p><?php echo $transaksi['nama_ekspedisi'] ?>, <?php echo $transaksi['layanan_ekspedisi'] ?></p>
             <p><?php echo $transaksi['estimasi_ekspedisi'] ?>, <?php echo $transaksi['berat_ekspedisi'] ?></p>
+            <h6>Resi: <?php echo $transaksi['resi_ekspedisi'] ?></h6>
         </div>
     </div>
 
@@ -110,15 +153,74 @@
             // SnapToken acquired from previous step
             snap.pay('<?php echo $snapToken ?>', {
                 onSuccess: function(result) {
+                    window.location.href="<?php echo base_url('transaksi/detail/'.$transaksi['id_transaksi']) ?>"
                     // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
                 },
                 onPending: function(result) {
+                    window.location.href="<?php echo base_url('transaksi/detail/'.$transaksi['id_transaksi']) ?>"
                     // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
                 },
                 onError: function(result) {
+                    window.location.href="<?php echo base_url('transaksi/detail/'.$transaksi['id_transaksi']) ?>"
                     // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
                 }
             });
         })
     </script>
 <?php endif ?>
+
+<?php if ($transaksi['status_transaksi'] == 'lunas') : ?>
+    <form action="" method="post">
+        <div class="container">
+            <h6 class="mt-5 mb-3">Beri Ulasan</h6>
+            <?php $belumdiisi = 0; ?>
+            <?php foreach ($transaksi_detail as $k => $v) : ?>
+                <?php if (empty($v['jumlah_rating'])) : ?>
+                    <?php $belumdiisi++; ?>
+                    <div class="mb-2">
+                        <h6><?php echo $v['nama_beli'] ?></h6>
+                        <p class="stars" k="<?php echo $k ?>">
+                            <span k="<?php echo $k ?>">
+                                <a k="<?php echo $k ?>" class="star-1" href="#">1</a>
+                                <a k="<?php echo $k ?>" class="star-2" href="#">2</a>
+                                <a k="<?php echo $k ?>" class="star-3" href="#">3</a>
+                                <a k="<?php echo $k ?>" class="star-4" href="#">4</a>
+                                <a k="<?php echo $k ?>" class="star-5" href="#">5</a>
+                            </span>
+                        </p>
+                        <input type="hidden" name="id_transaksi_detail[]" value="<?php echo $v['id_transaksi_detail'] ?>">
+                        <input type="hidden" class="jrt" name="jumlah_rating[]" k="<?php echo $k ?>">
+                        <textarea name="ulasan_rating[]" class="form-control"></textarea>
+                    </div>
+                    <hr>
+                <?php endif ?>
+
+                <?php if (!empty($v['jumlah_rating'])) : ?>
+                    <h6><?php echo $v['nama_beli'] ?></h6>
+                    <?php foreach (range(1, $v['jumlah_rating']) as $k => $jum) : ?>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    <?php endforeach ?>
+                    <div class="bg-light small text-muted">
+                        <?php echo $v['ulasan_rating'] ?>
+                    </div>
+                    <hr>
+                <?php endif ?>
+            <?php endforeach ?>
+            <?php if ($belumdiisi > 0) : ?>
+                <button class="btn btn-primary">Kirim</button>
+            <?php endif ?>
+        </div>
+    </form>
+<?php endif ?>
+
+<script>
+    $('.stars a').on('click', function(e) {
+        e.preventDefault();
+        k = $(this).attr("k");
+        $('.stars span[k="' + k + '"], .stars a[k="' + k + '"]').removeClass('active');
+
+        $(this).addClass('active');
+        $('.stars span[k="' + k + '"]').addClass('active');
+        $('.jrt[k="' + k + '"]').val($(this).text());
+    });
+</script>

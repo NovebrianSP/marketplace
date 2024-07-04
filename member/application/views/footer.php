@@ -15,7 +15,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post">
+                    <form method="post" action="<?php echo base_url('welcome') ?>">
                         <div class="mb-3">
                             <label for="email_member">Email Anda</label>
                             <input type="text" name="email_member" class="form-control" value="<?php echo set_value('email_member') ?>">

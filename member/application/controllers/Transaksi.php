@@ -27,6 +27,10 @@ class Transaksi extends CI_Controller
     {
         $this->load->model('Mtransaksi');
         $data['transaksi'] = $this->Mtransaksi->detail($id_transaksi);
+        if ($data['transaksi']['id_member_beli'] !== $this->session->userdata('id_member')) {
+            $this->session->set_flashdata('pesan_gagal', 'tidak valid');
+            redirect('transaksi', 'refresh');
+        }
 
         $data['transaksi_detail'] = $this->Mtransaksi->transaksi_detail($id_transaksi);
 
@@ -81,6 +85,12 @@ class Transaksi extends CI_Controller
                     }
                 }
             }
+        }
+
+        if ($this->input->post()) {
+            $this->Mtransaksi->kirim_rating($this->input->post());
+            $this->session->set_flashdata('pesan_sukses', 'Ulasan telah terkirim');
+            redirect('/transaksi/detail/' . $id_transaksi, 'refresh');
         }
 
         $this->load->view('header');

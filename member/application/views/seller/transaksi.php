@@ -26,9 +26,10 @@
                             <span class="badge bg-dark">
                                 <?php echo $data['status_transaksi'] ?>
                             </span>
+                            <h6>Resi: <?php echo $data['resi_ekspedisi'] ?></h6>
                         </td>
                         <td class="allign-items-center">
-                            <a href="<?php echo base_url('transaksi/detail/'.$data['id_transaksi']) ?>" class="btn btn-info">Detail</a>
+                            <a href="<?php echo base_url('seller/transaksi/detail/'.$data['id_transaksi']) ?>" class="btn btn-info">Detail</a>
                         </td>
                     </tr>
                 <?php $nomor++;

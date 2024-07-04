@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
 <body>
   <div class="container mt-3">
     <div class="row mb-5">
@@ -30,6 +21,12 @@
         <h5>Ekspedisi</h5>
         <p><?php echo $transaksi['nama_ekspedisi'] ?>, <?php echo $transaksi['layanan_ekspedisi'] ?></p>
         <p><?php echo $transaksi['estimasi_ekspedisi'] ?>, <?php echo $transaksi['berat_ekspedisi'] ?></p>
+        <form method="post">
+          <div class="input-group">
+            <input type="text" name="resi_ekspedisi" class="form-control" value="<?php echo $transaksi['resi_ekspedisi'] ?>">
+            <button class="btn btn-primary">Kirim</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -70,5 +67,3 @@
     </table>
   </div>
 </body>
-
-</html>

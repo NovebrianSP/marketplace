@@ -26,8 +26,10 @@
             <div class="row">
                 <?php foreach ($kategori as $key => $v) : ?>
                     <div class="col-md-4 text-center">
-                        <img src="<?php echo $this->config->item('url_kategori') . $v['foto_kategori'] ?>" class="w-50 rounded-circle">
-                        <h6><?php echo $v['nama_kategori'] ?></h6>
+                        <a href="<?php echo base_url('kategori/detail/'.$v['id_kategori']) ?>" class="text-decoration-none">
+                            <img src="<?php echo $this->config->item('url_kategori') . $v['foto_kategori'] ?>" class="w-50 rounded-circle">
+                            <h6><?php echo $v['nama_kategori'] ?></h6>
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -40,7 +42,7 @@
             <div class="row">
                 <?php foreach ($produk as $key => $v) : ?>
                     <div class="col-md-3">
-                        <a href="<?php echo base_url("produk/detail/".$v["id_produk"]) ?>" class="text-decoration-none">
+                        <a href="<?php echo base_url("produk/detail/" . $v["id_produk"]) ?>" class="text-decoration-none">
                             <div class="card mb-3 border-0 shadow">
                                 <img src="<?php echo $this->config->item('url_produk') . $v['foto_produk'] ?>" alt="">
                                 <div class="card-body text-center">

@@ -64,7 +64,7 @@ class Keranjang extends CI_Controller
       $id_transaksi = $this->Mkeranjang->checkout($data['keranjang'], $data['member_jual'], $data['member_beli'], $data['biaya']['name'], $ongkirterpilih);
 
       $this->session->set_flashdata('pesan_sukses', 'transaksi berhasil');
-      redirect('transaksi/detail/'.$id_transaksi, 'refresh');
+      redirect('transaksi/detail/' . $id_transaksi, 'refresh');
     };
 
     $this->load->view('header');

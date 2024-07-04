@@ -18,4 +18,13 @@ class Mkategori extends CI_Model
 
 		return $d;
 	}
+
+	function produk($id)
+	{
+		$this->db->where('id_kategori', $id);
+		$q = $this->db->get('produk');
+		$d = $q->result_array();
+
+		return $d;
+	}
 }

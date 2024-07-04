@@ -1,10 +1,10 @@
 <body>
     <div class="container">
-        <h5>Produk Terbaru</h5>
+        <h5 class="py-4">Produk <?php echo $kategori['nama_kategori'] ?></h5>
 
         <div class="row">
             <?php foreach ($produk as $key => $v) : ?>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <a href="<?php echo base_url("produk/detail/".$v['id_produk']) ?>" class="text-decoration-none">
                         <div class="card border-0 shadow-sm">
                             <img src="<?php echo $this->config->item("url_produk") . $v['foto_produk'] ?>" alt="foto_produk">
